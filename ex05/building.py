@@ -45,16 +45,22 @@ def string_analysis(single_str: str) -> None:
 
 
 def main():
-    if len(sys.argv) < 2:
-        #prompting user when no argument is given
-        text_to_count = input("What is the text to count? ")
-    else:
-        # Asserting only one extra argument is given, avoiding assertion when prompting input
-        assert len(sys.argv) == 2, "AssertionError: more than one argument is provided"
-        # Retrieving argument
-        text_to_count = sys.argv[1]
+    try:
+        if len(sys.argv) < 2:
+            #prompting user when no argument is given
+            text_to_count = input("What is the text to count? ")
+        else:
+            # Asserting only one extra argument is given, avoiding assertion when prompting input
+                assert len(sys.argv) == 2, "AssertionError: more than one argument is provided"
+                
+                # Retrieving argument
+                text_to_count = sys.argv[1]
+    
+        string_analysis(text_to_count)
 
-    string_analysis(text_to_count)
+    except AssertionError as error:
+        print(error)
+
 
 if __name__ == "__main__":
     main()

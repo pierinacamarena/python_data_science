@@ -8,24 +8,24 @@ def identify_odd_even(number: int) -> None:
 
 def main():
     try:
+        if len(sys.argv) < 2:
+            #If not, prompt the user for input
+            number_to_analyze = input("What is the number you wish to check? ")
+            val = int(number_to_analyze)  # Convert to int
+        else:
+            #Retrieving argument and ensuring only one extra argument is given
+            assert len(sys.argv) == 2, "more than one argument is provided"
+            number_to_analyze = sys.argv[1]
+            val = int(number_to_analyze)  # Convert to int
 
-        #Ensuring only one extra argument is given
-        assert len(sys.argv) == 2, "AssertionError: more than one argument is provided"
-
-        #retriving argument
-        argument = sys.argv[1]
-
-        #attempt to convert to an int
-        val = int(argument)
-
-        #function that checks odd/even
+        # Function that checks odd/even
         identify_odd_even(val)
 
-    #printing errors
     except AssertionError as error:
         print(error)
     except ValueError:
-        print("AssertionError: argument is not an integer")
+        print("Error: The argument is not an integer")
+
 
 if __name__ == "__main__":
     main()
