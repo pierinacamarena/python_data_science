@@ -5,7 +5,13 @@ import sys
 
 def format_time(seconds: float) -> str:
     """
-    Format the given time in seconds as MM:SS
+    Formats the given time in seconds to a string in MM:SS format.
+
+    Args:
+    seconds (float): The time duration in seconds.
+
+    Returns:
+    str: The formatted time string in MM:SS format.
     """
     m, s = divmod(int(seconds), 60)
     return f"{m:02d}:{s:02d}"
@@ -13,7 +19,17 @@ def format_time(seconds: float) -> str:
 
 def format_progress_info(progress: int, width: int, iter: int, i: int) -> str:
     """
-    Format progress bar
+    Formats information about the progress of a task.
+
+    Args:
+    progress (int): The current progress as a count of completed units.
+    width (int): The total width of the progress bar in characters.
+    iter (int): The total number of iterations.
+    i (int): The current iteration number.
+
+    Returns:
+    str: A formatted string containing the progress bar
+    and progress information.
     """
     # calculate percetange processed
     progress_percentage = progress * 100 // width
@@ -29,7 +45,19 @@ def format_progress_info(progress: int, width: int, iter: int, i: int) -> str:
 
 def ft_tqdm(lst: range) -> None:
     """
-    Simulate a progress bar for iterating through a range.
+    Simulates a progress bar for iterating through a range,
+    similar to the tqdm library.
+
+    For each item in the iterable `lst`, this function prints
+    a dynamically updating progress bar showing the time elapsed,
+    estimated time remaining, and iteration speed.
+
+    Args:
+    lst (range): The range of numbers to iterate over.
+
+    Yields:
+    None: This function is a generator that also prints
+    to stdout but does not yield any values.
     """
     total_iterations = len(lst)
 

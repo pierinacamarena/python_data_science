@@ -2,6 +2,15 @@ import sys
 
 
 def cypher_to_morse_code(s: str) -> str:
+    """
+    Converts an input string to Morse code.
+
+    Args:
+    s (str): The input string to be converted to Morse code.
+
+    Returns:
+    str: A string representing the Morse code of the input string.
+    """
     # Dictionary representing the morse code chart
     NESTED_MORSE = {'A': '.-', 'B': '-...',
                     'C': '-.-.', 'D': '-..', 'E': '.',
@@ -25,6 +34,8 @@ def cypher_to_morse_code(s: str) -> str:
 
 
 def is_space_or_alnum(s: str) -> bool:
+    """Returns if the string consists of only alphanumeric
+    character and spaces or not"""
     return all(char.isalnum() or char.isspace() for char in s)
 
 

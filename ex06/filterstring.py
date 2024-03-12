@@ -7,6 +7,18 @@ import sys
 
 
 def generate_list_of_matching_length_words(s: str, length: int) -> list:
+    """
+    Generates a list of words from the input string that
+    are longer than a specified length.
+
+    Args:
+    s (str): The input string from which words will be extracted.
+    length (int): The threshold length
+
+    Returns:
+    list: A list containing words from the input string
+    that have more than `length` characters.
+    """
     return [
         word for word in s.split()
         if (lambda word: len(word) > length)(word)
