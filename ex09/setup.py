@@ -6,7 +6,7 @@ LONG_DESCRIPTION = 'A sample test package for 42 python piscine'
 
 setup(
     name='ft_package',
-    Version= VERSION,
+    version= VERSION,
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     author='pcamaren',
