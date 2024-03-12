@@ -2,7 +2,7 @@ import sys
 
 def cypher_to_morse_code(s: str) -> str:
     # Dictionary representing the morse code chart
-    MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
+    NESTED_MORSE = { 'A':'.-', 'B':'-...',
                         'C':'-.-.', 'D':'-..', 'E':'.',
                         'F':'..-.', 'G':'--.', 'H':'....',
                         'I':'..', 'J':'.---', 'K':'-.-',
@@ -18,7 +18,7 @@ def cypher_to_morse_code(s: str) -> str:
     
     s = s.upper()
     # result_string = 'separator'.join(transform_function(item) for item in iterable if condition(item))
-    morse_string = ''.join(MORSE_CODE_DICT[char] for char in s if char in MORSE_CODE_DICT)
+    morse_string = ''.join(NESTED_MORSE[char] for char in s if char in NESTED_MORSE)
 
     return morse_string
 
