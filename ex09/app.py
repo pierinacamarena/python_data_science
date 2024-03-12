@@ -1,6 +1,6 @@
 import subprocess
 import pkg_resources
-
+import os
 
 def run_command(command, check=True):
     """Execute a system command and optionally check for errors."""
@@ -44,7 +44,7 @@ def show():
 def test():
     """Run package tests."""
     print("Running tests...")
-    run_command(["pytest"], check=False)
+    os.system("python3.10 tester.py")
 
 
 if __name__ == "__main__":
