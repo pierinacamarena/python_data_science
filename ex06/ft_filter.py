@@ -10,4 +10,3 @@ def ft_filter(function, iterable):
         return (item for item in iterable if function(item)) #generator expressions
     return (item for item in iterable if item) #filer falsy values (0, False, None, etc)
 
-
